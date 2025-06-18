@@ -28,7 +28,7 @@ Contato – Links para redes sociais e formas de comunicação.
 Clone este repositório:
 
 bash
-git clone https://github.com/seu-usuario/portfolio.git
+git clone https://github.com/
 Acesse a pasta do projeto:
 
 bash
@@ -36,4 +36,4 @@ cd portfolio
 Abra o arquivo index.html no navegador.
 
 📩 Contato
-Caso tenha sugestões ou queira entrar em contato, me encontre em: ✉️ Email: felipe-teti@hotmail.com 💼 LinkedIn: linkedin.com/in/www.linkedin.com/in/filipeebraga
+Caso tenha sugestões ou queira entrar em contato, me encontre em: ✉️ Email: felipe-teti@hotmail.com 💼 LinkedIn:www.linkedin.com/in/filipeebraga
