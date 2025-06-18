@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300&display=swap'); /* Importação da fonte */
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+ height: 100vh;             /* Ocupa 100% da altura da janela */  
+ font-family: 'Poppins', sans-serif;
+  background-color: #121212;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+header {
+  position: fixed;  /* Deixe apenas este */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  padding: 1rem 0;
+  z-index: 1000;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.nav a {
+  color: #00ffcc;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #ffffff;
+}
+
+.intro {
+  
+  min-height: 95vh;
+  padding: 4rem 1rem;
+  background-size: 1200px 120;
+  text-align: center;
+  padding: 14rem 1rem;
+}
+
+.avatar {
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 5px solid #ff0077;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5rem;
+  text-align: center;
+}
+
+h2 {
+  text-transform: uppercase;
+  color: #ff0077;
+  font-weight: 400;
+  font-size: 1.5rem;
+  padding: auto;
+  text-align: center;
+}
+
+.projetos {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  text-align: center; /* Alinha o texto */
+  min-height: 95vh;
+  padding: 4rem 1rem;
+
+}
+
+.projetos h4 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #feffff;
+}
+
+
+  .projetos-grid {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os elementos quebrem de linha */
+  justify-content: center; /* Centraliza os projetos */
+  align-items: center; /* Ajusta alinhamento no topo */
+  gap: 2rem; /* Espaço entre os itens */
+  max-width: 900px; /* Evita que tudo fique em uma única linha */
+}
+
+
+
+.projeto {
+  
+  background: #2b2b2b;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 280px;
+  transition: 0.3s;
+}
+
+.projeto:hover {
+  background: #333;
+}
+
+.projeto img {
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+  height: 352;
+  width: 248;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  
+}
+
+.projeto img:hover{
+
+
+filter: grayscale(0%);
+
+}
+
+.projeto h3 {
+  color: #ff0077;
+  margin-bottom: 0.5rem;
+}
+
+.projeto p{
+
+font-size:11px;
+
+}
+
+
+
+
+.icon {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px; 
+  padding-top: -50px;
+}
+
+
+#formacao {
+  display: flex;
+  flex-direction: column; /* Organiza os itens verticalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  text-align: center; /* Alinha o texto */
+  min-height: 100vh;
+  background-color: #1e1e1e;
+  padding: 60px 20px;
+}
+
+#formacao h2 {
+
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #f4f5f5;
+
+}
+
+#formacao p {
+  
+  display: flex;
+  color: #ffffff;
+  font-size: 1.1em;
+  line-height: 1.6em;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+#contato{
+
+min-height: 100vh;
+padding: 4rem 1rem;
+background-color: #1e1e1e;
+
+}
+
+/*footer {
+  background: #2b2b2b;
+  background: #333;
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  margin: 0; /* Remove espaços indesejados */
+}
