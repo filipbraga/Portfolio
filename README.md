@@ -22,18 +22,3 @@ Skills Técnicas – Lista de tecnologias e conhecimentos.
 
 Portfólio de Projetos – Exibição de projetos desenvolvidos, como Calculadora em Python e Gameflix.
 
-Contato – Links para redes sociais e formas de comunicação.
-
-🚀 Como Executar o Projeto
-Clone este repositório:
-
-bash
-git clone https://github.com/
-Acesse a pasta do projeto:
-
-bash
-cd portfolio
-Abra o arquivo index.html no navegador.
-
-📩 Contato
-Caso tenha sugestões ou queira entrar em contato, me encontre em: ✉️ Email: felipe-teti@hotmail.com 💼 LinkedIn:www.linkedin.com/in/filipeebraga
