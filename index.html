@@ -7,12 +7,14 @@
   <link rel="stylesheet" href="style2.css" /> <!-- Referencia ao arquivo css -->
   <link rel="icon" href="coder-logo.png">   <!-- Ícone da aba -->
 </head>
+
+
 <body>
 
   <header> <!-- Menu Fixo -->
     <nav>
       <ul class="nav">
-        <li><a href="#sobre">SOBRE MIM</a></li>
+        <li><a href="#sobre">SOBRE</a></li>
         <li><a href="#formacao">FORMAÇÃO</a></li>
         <li><a href="#portfolio">PORTFÓLIO</a></li>
         <li><a href="#contato">CONTATO</a></li>
@@ -68,7 +70,7 @@ I love solving problems, building efficient applications, and learning new techn
   </ul>
 </section>
 
-</section>  <!-- Grid de projetos -->
+  <!-- Grid de projetos -->
 
   <section id="portfolio" class="projetos">
     <h4>PORTFÓLIO</h4>
@@ -81,21 +83,21 @@ I love solving problems, building efficient applications, and learning new techn
       </div>
       <div class="projeto">
         <a href="https://github.com/filipbraga/Gameflix" target="_blank">
-        <img src="gameflix.png" alt="Projeto Calculadora 2" /></a>
+        <img src="gameflix.png" alt="Projeto Gameflix" /></a>
         <h3>GAMEFLIX</h3>
         <p>Plataforma de games inspirada na Netflix.</p>
       </div>
       <div class="projeto">
         <a href="https://github.com/filipbraga/Snakegame" target="_blank">
-        <img src="cobra.png" alt="Projeto Calculadora 2" /></a>
+        <img src="cobra.png" alt="Projeto Snake Game" /></a>
         <h3>SNAKE GAME</h3>
-        <p>Plataforma de games inspirada na Netflix.</p>
+        <p>Jogo Da Cobrinha em javascript.</p>
       </div>
       <div class="projeto">
         <a href="https://github.com/filipbraga/loginstagram" target="_blank">
-        <img src="insta.png" alt="Projeto Calculadora 2" /></a>
+        <img src="insta.png" alt="Projeto Login Instagram" /></a>
         <h3>INSTAGRAM</h3>
-        <p>Plataforma de games inspirada na Netflix.</p>
+        <p>Clone da Página de Login do Instagram.</p>
       </div>
     </div>
   </section>
@@ -107,17 +109,51 @@ I love solving problems, building efficient applications, and learning new techn
 
   <!-- Links de contato -->
   <div class="contato">
-    <a href="mailto:felipe-teti@hotmail.com" style="margin: 0 10px; color: #00FFF7; text-decoration: none;">✉️ Email</a>
-    <a href="https://github.com/filipbraga" target="_blank" style="margin: 0 10px; color: #00FFF7; text-decoration: none;">🐙 GitHub</a>
-    <a href="www.linkedin.com/in/filipeebraga" target="_blank" style="margin: 0 10px; color: #00FFF7; text-decoration: none;">💼 LinkedIn</a>
+    <a href="mailto:felipe-teti@hotmail.com" style="margin: 0 10px; color: #ff0077; text-decoration: none;">✉️ Email</a>
+    <a href="https://github.com/filipbraga" target="_blank" style="margin: 0 10px; color: #ff0077; text-decoration: none;">🐙 GitHub</a>
+    <a href="https://www.linkedin.com/in/filipeebraga" target="_blank" style="margin: 0 10px; color: #ff0077; text-decoration: none;">💼 LinkedIn</a>
   </div>
 
+<h3>📬 Envie uma mensagem</h3>
 
+<form id="form-contato" class="form-contato">
+  <label for="nome">Nome</label>
+  <input type="text" id="nome" name="nome" required>
 
-  <footer>  <!-- Roda Pé -->
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="mensagem">Mensagem</label>
+  <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+  <button type="submit">Enviar</button>
+</form>
+
+<p id="mensagem-sucesso" style="display: none; text-align: center; color: #00fff7; margin-top: 15px;">
+  ✅ Sua mensagem foi enviada com sucesso!
+</p>
+
+  <footer id="footer">  <!-- Roda Pé -->
     <p>&copy; 2025 Filipe Braga</p>
   </footer>
 
+
+<script>
+  const form = document.getElementById("form-contato");
+  const mensagem = document.getElementById("mensagem-sucesso");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Impede o recarregamento
+
+
+    // Exibe mensagem de sucesso
+    mensagem.style.display = "block";
+
+    // Limpa os campos
+    form.reset();
+  });
+
+</script>
 </body>
 </html>
 
