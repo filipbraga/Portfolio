@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300&display=swap'); /* Importação da fonte */
 
 
-/* Reset */
+/* Reset de estilo */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Estilos gerais do corpo da página */
 body {
- height: 100vh;             /* Ocupa 100% da altura da janela */  
+ height: 100vh;             
  font-family: 'Poppins', sans-serif;
   background-color: #121212;
   color: #f0f0f0;
@@ -17,6 +18,7 @@ body {
   
 }
 
+/* Estilos do cabeçalho fixo */
 header {
     position: fixed;
     top: 0;
@@ -30,17 +32,17 @@ header {
     z-index: 1000;
 }
 
-
+/* Estilos da navegação */
 .nav {
     display: flex;
-    justify-content: center; /* Centraliza os itens */
+    justify-content: center; 
     align-items: center;
     list-style: none;
-    gap: 20px; /* Espaço entre os itens */
+    gap: 20px; 
     padding: 10px 0;
 }
 
-
+/* Estilos dos links da navegação */
 .nav a {
   color: #00ffcc;
   text-decoration: none;
@@ -52,6 +54,7 @@ header {
   color: #ffffff;
 }
 
+/* Seção de introdução */
 .intro {
   
   min-height: 95vh;
@@ -61,6 +64,7 @@ header {
   padding: 14rem 1rem;
 }
 
+/* Estilos da imagem de perfil */
 .avatar {
   text-align: center;
   width: 300px;
@@ -71,6 +75,7 @@ header {
   object-fit: cover;
 }
 
+/* Estilos do título principal */
 h1 {
   text-transform: uppercase;
   font-size: 2.5rem;
@@ -88,13 +93,14 @@ h2 {
   text-align: center;
 }
 
+/* Seção de projetos */
 .projetos {
 
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centraliza verticalmente */
-  align-items: center; /* Centraliza horizontalmente */
-  text-align: center; /* Alinha o texto */
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
   min-height: 95vh;
   padding: 4rem 1rem;
 
@@ -106,18 +112,18 @@ h2 {
   color: #00ffcc;
 }
 
-
+/* Grid de projetos */
   .projetos-grid {
   display: flex;
-  flex-wrap: wrap; /* Permite que os elementos quebrem de linha */
-  justify-content: center; /* Centraliza os projetos */
-  align-items: center; /* Ajusta alinhamento no topo */
-  gap: 2rem; /* Espaço entre os itens */
-  max-width: 900px; /* Evita que tudo fique em uma única linha */
+  flex-wrap: wrap; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 2rem; 
+  max-width: 900px; 
 }
 
 
-
+/* Estilos dos blocos de projeto */
 .projeto {
   
   background: #2b2b2b;
@@ -128,9 +134,10 @@ h2 {
 }
 
 .projeto:hover {
-  background: #333;
+  background: #333;/* Altera a cor ao passar o mouse */
 }
 
+/* Estilos das imagens dos projetos */
 .projeto img {
   filter: grayscale(100%);
   transition: filter 0.5s ease;
@@ -139,6 +146,7 @@ h2 {
   
 }
 
+/* Remove efeito preto e branco ao passar o mouse */
 .projeto img:hover{
 
 
@@ -169,13 +177,13 @@ font-size:11px;
   padding-top: -50px;
 }
 
-
+/* Seção de formação */
 #formacao {
   display: flex;
-  flex-direction: column; /* Organiza os itens verticalmente */
-  justify-content: center; /* Centraliza verticalmente */
-  align-items: center; /* Centraliza horizontalmente */
-  text-align: center; /* Alinha o texto */
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
   min-height: 100vh;
   background-color: #1e1e1e;
   padding: 60px 20px;
@@ -201,6 +209,7 @@ font-size:11px;
 
 }
 
+/* Seção de contato */
 #contato {
   min-height: 100vh;
   padding: 4rem 1rem;
@@ -211,7 +220,7 @@ font-size:11px;
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 2rem; /* espaçamento entre os elementos */
+  gap: 2rem; 
 }
 
 #contato h2{
@@ -245,7 +254,7 @@ font-size:11px;
   color: #ffffff;
 }
 
-
+/* Estilos do formulário de contato */
 .form-contato {
   max-width: 700px; 
   width: 100%;
@@ -264,6 +273,7 @@ font-size:11px;
   font-weight: bold;
 }
 
+
 .form-contato input,
 .form-contato textarea {
   width: 100%;
@@ -275,6 +285,8 @@ font-size:11px;
   resize: vertical;
 }
 
+
+/* Estilos do botão do formulário */
 .form-contato button {
   background-color: #cfd3d3;
   color: #000;
@@ -287,7 +299,7 @@ font-size:11px;
 }
 
 .form-contato button:hover {
-  background-color: #00e6d2;
+  background-color: #00e6d2; /* Muda cor ao passar o mouse */
 }
 
 
