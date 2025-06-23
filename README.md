@@ -9,9 +9,6 @@ CSS3 – Estilização e layout responsivo
 
 JavaScript – Funcionalidades dinâmicas
 
-React – Desenvolvimento frontend interativo (caso utilizado)
-
-Node.js – Backend simples (caso utilizado)
 
 🎨 Estrutura do Portfólio
 Sobre Mim – Apresentação pessoal e trajetória profissional.
