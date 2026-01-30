@@ -1,173 +1,437 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Filipe Braga | Web Developer</title> <!-- Titulo da aba -->
-  <link rel="stylesheet" href="style2.css" /> <!-- Referencia ao arquivo css -->
-  <link rel="icon" href="coder-logo.png">   <!-- Ícone da aba -->
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Filipe Braga | Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7f06f9",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#050510", // Deeper navy for cyber-tech feel
+                        "hud-bg": "rgba(127, 6, 249, 0.05)",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .cyber-grid {
+            background-image: 
+                linear-gradient(to right, rgba(127, 6, 249, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(127, 6, 249, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: rgba(127, 6, 249, 0.1);
+            position: absolute;
+            z-index: 10;
+            pointer-events: none;
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(127, 6, 249, 0.5);
+        }
+        .hud-border {
+            border: 1px solid rgba(127, 6, 249, 0.3);
+            position: relative;
+        }
+        .hud-border::before, .hud-border::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-color: #7f06f9;
+            border-style: solid;
+        }
+        .hud-border::before {
+            top: -1px;
+            left: -1px;
+            border-width: 2px 0 0 2px;
+        }
+        .hud-border::after {
+            bottom: -1px;
+            right: -1px;
+            border-width: 0 2px 2px 0;
+        }
+    </style>
 </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200 overflow-x-hidden">
+<!-- Subtle Background Elements -->
+<div class="fixed inset-0 cyber-grid pointer-events-none"></div>
+<div class="fixed inset-0 bg-gradient-to-tr from-background-dark via-transparent to-primary/10 pointer-events-none"></div>
+<!-- Layout Container -->
+<div class="flex min-h-screen relative">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-6 top-1/2 -translate-y-1/2 z-50">
+<nav class="flex flex-col gap-6 p-3 bg-background-dark/80 backdrop-blur-md border border-primary/20 rounded-lg shadow-[0_0_20px_rgba(127,6,249,0.15)]">
+<div class="group relative flex items-center">
+<div class="p-3 rounded bg-primary text-white flex items-center justify-center transition-all duration-300 shadow-[0_0_15px_rgba(127,6,249,0.5)]">
+<span class="material-symbols-outlined">home</span>
+</div>
+<span class="absolute left-16 px-2 py-1 bg-primary text-white text-xs font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">Home</span>
+</div>
+<div class="group relative flex items-center">
+<div class="p-3 rounded border border-primary/30 text-primary hover:bg-primary/10 flex items-center justify-center transition-all duration-300">
+<span class="material-symbols-outlined">memory</span>
+</div>
+<span class="absolute left-16 px-2 py-1 bg-primary text-white text-xs font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">Projects</span>
+</div>
+<div class="group relative flex items-center">
+<div class="p-3 rounded border border-primary/30 text-primary hover:bg-primary/10 flex items-center justify-center transition-all duration-300">
+<span class="material-symbols-outlined">terminal</span>
+</div>
+<span class="absolute left-16 px-2 py-1 bg-primary text-white text-xs font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">Skills</span>
+</div>
+<div class="group relative flex items-center">
+<div class="p-3 rounded border border-primary/30 text-primary hover:bg-primary/10 flex items-center justify-center transition-all duration-300">
+<span class="material-symbols-outlined">history</span>
+</div>
+<span class="absolute left-16 px-2 py-1 bg-primary text-white text-xs font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">Logs</span>
+</div>
+<div class="group relative flex items-center">
+<div class="p-3 rounded border border-primary/30 text-primary hover:bg-primary/10 flex items-center justify-center transition-all duration-300">
+<span class="material-symbols-outlined">alternate_email</span>
+</div>
+<span class="absolute left-16 px-2 py-1 bg-primary text-white text-xs font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">Contact</span>
+</div>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-24 mr-8 lg:mr-12">
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col justify-center py-20">
+<div class="max-w-5xl mx-auto w-full px-4">
+<div class="relative group">
+<!-- Technical Overlay Header -->
+<div class="flex items-center gap-4 mb-4">
+<div class="h-[1px] w-12 bg-primary"></div>
+<span class="text-primary text-[10px] tracking-[0.4em] uppercase font-bold">Protocol_Initialized // User_Identified</span>
+</div>
+<!-- Hero Content -->
+<div class="flex flex-col @container">
+<div class="relative">
+<!-- Background Mesh Substitute (Hero Design) -->
+<div class="absolute -right-20 -top-20 size-96 bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute -left-20 -bottom-20 size-64 bg-primary/5 rounded-full blur-[80px] pointer-events-none"></div>
+<div class="flex flex-col gap-6 items-start">
+<h1 class="text-white text-6xl md:text-8xl font-black leading-none tracking-tighter glow-text">
+                                        FILIPE<br/>BRAGA
+                                    </h1>
+<div class="flex flex-wrap gap-4 items-center">
+<h2 class="text-primary/80 text-lg md:text-xl font-medium tracking-[0.2em] border-l-4 border-primary pl-4 uppercase">
+                                            ADS_STUDENT // WEB_DEVELOPER
+                                        </h2>
+<div class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-[10px] text-primary uppercase font-bold tracking-widest">
+                                            v1.0.4-stable
+                                        </div>
+</div>
+<div class="mt-8 flex gap-6">
+<button class="group relative px-8 py-4 bg-primary text-white font-bold tracking-widest uppercase text-sm overflow-hidden transition-all hover:shadow-[0_0_30px_rgba(127,6,249,0.5)]">
+<span class="relative z-10">START_PROJECT</span>
+<div class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
+</button>
+<button class="px-8 py-4 border border-primary/40 text-primary font-bold tracking-widest uppercase text-sm hover:bg-primary/5 transition-colors">
+                                            VIEW_CERTIFICATIONS
+                                        </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section: ACTIVE_OPERATIONS -->
+<section class="py-20 max-w-5xl mx-auto w-full px-4">
+<div class="flex items-center justify-between mb-12">
+<h2 class="text-white text-3xl font-black tracking-widest uppercase">
+                        ACTIVE_<span class="text-primary">PROJECTS</span>
+</h2>
+<div class="hidden md:flex flex-col items-end opacity-40">
+<span class="text-[10px] font-mono tracking-widest uppercase">Filter: ALL_PROJECTS</span>
+<span class="text-[10px] font-mono tracking-widest uppercase">Sort: DATE_DESC</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- HUD Card 1 -->
+<div class="hud-border bg-hud-bg p-6 group hover:bg-primary/10 transition-all duration-500 cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="size-12 border border-primary/30 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<div class="text-right">
+<span class="text-[10px] text-primary/60 font-mono block">REF_ID: 0x921</span>
+<span class="text-[10px] text-emerald-400 font-mono block">STATUS: ONLINE</span>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-white text-xl font-bold mb-2 tracking-wide uppercase">EVENT_INTERFACE_PROTOCOL</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Responsive web architecture designed for social event management. Features custom CSS animations and mobile-first layout optimization." (Arquitetura web responsiva projetada para gestão de eventos sociais. Apresenta animações CSS customizadas e otimização de layout mobile-first.</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="text-[9px] px-2 py-0.5 border border-primary/20 text-primary font-mono uppercase">HTML5</span>
+<span class="text-[9px] px-2 py-0.5 border border-primary/20 text-primary font-mono uppercase">CSS3</span>
+<span class="text-[9px] px-2 py-0.5 border border-primary/20 text-primary font-mono uppercase">JAVASCRIPT</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-primary/10">
+<span class="text-xs text-primary font-bold tracking-widest uppercase group-hover:translate-x-2 transition-transform">View_Core_Files →</span>
+<div class="flex gap-1">
+<div class="size-1 bg-primary"></div>
+<div class="size-1 bg-primary/40"></div>
+<div class="size-1 bg-primary/20"></div>
+</div>
+</div>
+</div>
+<!-- HUD Card 2 -->
+<div class="hud-border bg-hud-bg p-6 group hover:bg-primary/10 transition-all duration-500 cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="size-12 border border-primary/30 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">database</span>
+</div>
+<div class="text-right">
+<span class="text-[10px] text-primary/60 font-mono block">REF_ID: 0x442</span>
+<span class="text-[10px] text-amber-400 font-mono block">STATUS: SYNCING</span>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-white text-xl font-bold mb-2 tracking-wide uppercase">AUDIO_STREAM_MODULE</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Cross-platform audio processing unit utilizing Python libraries. Implements dynamic playlist management and custom GUI controls." (Unidade de processamento de áudio multiplataforma utilizando bibliotecas Python. Implementa gestão dinâmica de playlists e controles de GUI customizados.</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="text-[9px] px-2 py-0.5 border border-primary/20 text-primary font-mono uppercase">PYTHON</span>
+<span class="text-[9px] px-2 py-0.5 border border-primary/20 text-primary font-mono uppercase">KIVY</span>
+<span class="text-[9px] px-2 py-0.5 border border-primary/20 text-primary font-mono uppercase">UI/UX</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-primary/10">
+<span class="text-xs text-primary font-bold tracking-widest uppercase group-hover:translate-x-2 transition-transform">Access_Vault →</span>
+<div class="flex gap-1">
+<div class="size-1 bg-primary"></div>
+<div class="size-1 bg-primary"></div>
+<div class="size-1 bg-primary/20"></div>
+</div>
+</div>
+</div>
+<!-- HUD Card 3 -->
+<div class="hud-border bg-hud-bg p-6 group hover:bg-primary/10 transition-all duration-500 cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="size-12 border border-primary/30 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">shield</span>
+</div>
+<div class="text-right">
+<span class="text-[10px] text-primary/60 font-mono block">REF_ID: 0x118</span>
+<span class="text-[10px] text-emerald-400 font-mono block">STATUS: PROTECTED</span>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-white text-xl font-bold mb-2 tracking-wide uppercase">DATA_PERSISTENCE_CORE</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Robust data management system implementing CRUD operations. Optimized for local storage efficiency and relational integrity." (Sistema robusto de gerenciamento de dados implementando operações CRUD. Otimizado para eficiência de armazenamento local e integridade relacional.</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="text-[9px] px-2 py-0.5 border border-primary/20 text-primary font-mono uppercase">PYTHON</span>
+<span class="text-[9px] px-2 py-0.5 border border-primary/20 text-primary font-mono uppercase">SQLITE</span>
+<span class="text-[9px] px-2 py-0.5 border border-primary/20 text-primary font-mono uppercase">BACKEND</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-primary/10">
+<span class="text-xs text-primary font-bold tracking-widest uppercase group-hover:translate-x-2 transition-transform">Verify_Certs →</span>
+<div class="flex gap-1">
+<div class="size-1 bg-primary"></div>
+<div class="size-1 bg-primary"></div>
+<div class="size-1 bg-primary"></div>
+</div>
+</div>
+</div>
+<!-- HUD Card 4 -->
+<div class="hud-border bg-hud-bg p-6 group hover:bg-primary/10 transition-all duration-500 cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="size-12 border border-primary/30 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">layers</span>
+</div>
+<div class="text-right">
+<span class="text-[10px] text-primary/60 font-mono block">REF_ID: 0x76A</span>
+<span class="text-[10px] text-emerald-400 font-mono block">STATUS: STABLE</span>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-white text-xl font-bold mb-2 tracking-wide uppercase">HARDWARE_OPS_ARCHIVE</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Technical documentation and scripts regarding hardware maintenance, microsoldering diagnostics, and system hardening protocols.</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="text-[9px] px-2 py-0.5 border border-primary/20 text-primary font-mono uppercase">HARDWARE</span>
+<span class="text-[9px] px-2 py-0.5 border border-primary/20 text-primary font-mono uppercase">NETWORKING</span>
+<span class="text-[9px] px-2 py-0.5 border border-primary/20 text-primary font-mono uppercase">REPAIR</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-primary/10">
+<span class="text-xs text-primary font-bold tracking-widest uppercase group-hover:translate-x-2 transition-transform">Open_Interface →</span>
+<div class="flex gap-1">
+<div class="size-1 bg-primary"></div>
+<div class="size-1 bg-primary/40"></div>
+<div class="size-1 bg-primary/20"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience / Logs Section -->
+<section class="py-20 max-w-5xl mx-auto w-full px-4">
+<div class="flex flex-col md:flex-row gap-12">
+<div class="flex-1">
+<h2 class="text-white text-2xl font-black tracking-widest uppercase mb-12 flex items-center gap-4">
+                            VERSION_HISTORY
+                            <span class="h-[1px] flex-1 bg-primary/20"></span>
+</h2>
+<div class="space-y-8 relative">
+<div class="absolute left-4 top-2 bottom-2 w-px bg-primary/20"></div>
+<!-- Log Entry 1 -->
+<div class="relative pl-12">
+<div class="absolute left-2.5 top-1 size-3 bg-primary rounded-full shadow-[0_0_10px_#7f06f9]"></div>
+<div class="flex flex-col gap-1 mb-2">
+<span class="text-[10px] text-primary font-mono uppercase tracking-widest font-bold">2018 - 2023</span>
+<h4 class="text-white text-lg font-bold tracking-wide uppercase">IT Support Technician @ UPGRADE FONE</h4>
+</div>
+<p class="text-slate-400 text-sm">Performed advanced circuit board repairs (microsoldering) and hardware maintenance. Managed technical support and operating system configuration.</p>
+</div>
+<!-- Log Entry 2 -->
+<div class="relative pl-12">
+<div class="absolute left-3 top-1 size-2 bg-primary/40 rounded-full"></div>
+<div class="flex flex-col gap-1 mb-2">
+<span class="text-[10px] text-primary/60 font-mono uppercase tracking-widest">2015 - 2018</span>
+<h4 class="text-white/80 text-lg font-bold tracking-wide uppercase">IT Support Technician @ CASE Inc.</h4>
+</div>
+<p class="text-slate-400 text-sm">Advanced PCB repair (microsoldering) and hardware maintenance. Technical support management and OS configuration.</p>
+</div>
+<!-- Log Entry 3 -->
+<div class="relative pl-12">
+<div class="absolute left-3 top-1 size-2 bg-primary/40 rounded-full"></div>
+<div class="flex flex-col gap-1 mb-2">
+<span class="text-[10px] text-primary/60 font-mono uppercase tracking-widest">2012 - 2014</span>
+<h4 class="text-white/80 text-lg font-bold tracking-wide uppercase">JUNIOR WEB DEVELOPER @ FLIP_STARTUP</h4>
+</div>
+<p class="text-slate-400 text-sm">Developed and maintained responsive web interfaces. Fixed bugs and implemented new features using HTML, CSS, and JavaScript.</p>
+</div>
+</div>
+</div>
+<!-- Skills Side Widget -->
+<div class="w-full md:w-80">
+<div class="hud-border bg-primary/5 p-6 h-fit sticky top-24">
+<h3 class="text-white text-xs font-bold tracking-[0.3em] uppercase mb-6 border-b border-primary/20 pb-4">Core_Capabilities</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-[10px] font-mono text-primary uppercase mb-1">
+<span>Backend_Architecture</span>
+<span>95%</span>
+</div>
+<div class="h-1 bg-primary/10">
+<div class="h-full bg-primary" style="width: 95%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[10px] font-mono text-primary uppercase mb-1">
+<span>HARDWARE_REPAIR:</span>
+<span>95%</span>
+</div>
+<div class="h-1 bg-primary/10">
+<div class="h-full bg-primary" style="width: 88%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[10px] font-mono text-primary uppercase mb-1">
+<span>IT_INFRASTRUCTURE</span>
+<span>92%</span>
+</div>
+<div class="h-1 bg-primary/10">
+<div class="h-full bg-primary" style="width: 92%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[10px] font-mono text-primary uppercase mb-1">
+<span>3D_PRINTING</span>
+<span>80%</span>
+</div>
+<div class="h-1 bg-primary/10">
+<div class="h-full bg-primary" style="width: 88%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[10px] font-mono text-primary uppercase mb-1">
+<span>3D_MODELING</span>
+<span>80%</span>
+</div>
 
-
-<body>
-
-  <header> <!-- Menu Fixo -->
-    <nav>
-      <ul class="nav">
-        <li><a href="#sobre">SOBRE</a></li>
-        <li><a href="#formacao">FORMAÇÃO</a></li>
-        <li><a href="#portfolio">PORTFÓLIO</a></li>
-        <li><a href="#contato">CONTATO</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Seção de introdução e apresentação -->
-
-  <section class="intro" id="sobre"> 
-    <img src="perfil.jpg" alt="Foto de Filipe Braga" class="avatar" />
-    <h1>Filipe Braga</h1>
-    <h2>Web Developer</h2><br>
-    <p># Hi there! 👋 I'm Filipe Braga<br>
- I'm a passionate **Web Developer**,<br> 
-**IT Technician**, and a student of **Systems Analysis and Development**.<br>
-I love solving problems, building efficient applications, and learning new technologies.<br>
-    </p>
-
-  </section>
- 
-<!-- Icones da apresentação -->
-
-<div class="icon"> 
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="javascript logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" alt="react logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40" alt="python logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="40" alt="linux logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" alt="html5 logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" height="40" alt="arduino logo"  />
+<div class="h-1 bg-primary/10">
+<div class="h-full bg-primary" style="width: 80%"></div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex flex-wrap gap-2">
+<span class="bg-primary/20 text-primary text-[9px] px-2 py-1 uppercase font-bold tracking-tighter">PYTHON</span>
+<span class="bg-primary/20 text-primary text-[9px] px-2 py-1 uppercase font-bold tracking-tighter">JAVASCRIPT</span>
+<span class="bg-primary/20 text-primary text-[9px] px-2 py-1 uppercase font-bold tracking-tighter">FUSION_360</span>
+<span class="bg-primary/20 text-primary text-[9px] px-2 py-1 uppercase font-bold tracking-tighter">Kubernetes</span>
+<span class="bg-primary/20 text-primary text-[9px] px-2 py-1 uppercase font-bold tracking-tighter">Next.js</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer / Contact -->
+<footer class="py-12 border-t border-primary/10 mt-20">
+<div class="max-w-5xl mx-auto w-full px-4 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="flex items-center gap-4">
+<div class="size-10 bg-primary/10 rounded border border-primary/20 flex items-center justify-center">
+<img class="size-6 opacity-80" data-alt="Cyberpunk style minimalist logo of FB" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCviTQb0VvQCu4ZppdCjvVfJ4s_jlGNZmXGps7pYa4wQHMXMv59jyhaSLTEbi-75K03V5iARbhxpry83n7iyOMjqmTIrrXzXhhPkyaIvCEW0EWqRnT721eNnGwMOjM7SBidlbjj5Ho8n9z1_RncCN6SNcshQj5tPSDAOXELdU0_ZvjpoWQpmp0-GBog8PJQ7SGlYQwt3vlrcxMIP2H0AiOuOmvdy1tGIei5nEs3Ah1kMpdoFS0K6Br3S1vG7qWfF47jheIMfluT_n8R"/>
+</div>
+<div>
+<p class="text-white text-sm font-bold tracking-widest uppercase">FB_OS v1.0.4</p>
+<p class="text-slate-500 text-[10px] font-mono tracking-tight">Copyright © 2024 flip_systems. All Rights Reserved.</p>
+</div>
 </div>
 
 
-  <!-- Seção de formação acadêmica e habilidades -->
+<div class="flex gap-8">
+    <a class="text-slate-400 hover:text-primary transition-colors flex items-center gap-2 group" href="https://github.com/filipbraga" target="_blank">
+        <span class="text-[10px] font-mono tracking-widest uppercase">Github</span>
+        <span class="material-symbols-outlined text-sm group-hover:scale-110 transition-transform">code</span>
+    </a>
 
- <section id="formacao">
-  <h2><strong>🎓FORMAÇÃO</strong></h2>
-  <div>
-    <p><strong>Técnico em Informática</strong> – (IETAAM)</p>
-    <p><strong>Graduando em Análise e Desenvolvimento de Sistemas</strong> – (UNINTER)</p>
-    <p><strong>Cursos online em JavaScript, Python, Git e Desenvolvimento Web Moderno</strong></p>
-    <p><strong>Conhecimento avançado em Impressão 3D</strong></p>
-    <p><strong>Especialização em Micro-solda BGA</strong></p>
-  </div>
+    <a class="text-slate-400 hover:text-primary transition-colors flex items-center gap-2 group" href="https://www.linkedin.com/in/filipeebraga" target="_blank">
+        <span class="text-[10px] font-mono tracking-widest uppercase">LinkedIn</span>
+        <span class="material-symbols-outlined text-sm group-hover:scale-110 transition-transform">hub</span>
+    </a>
 
-  <br>
-
-  <h3>🛠️ Skills Técnicas</h3>
-
-  <ul>
-    <li>🎨 <strong>Frontend:</strong> HTML, CSS, JavaScript, React</li>
-    <li>🔧 <strong>Backend:</strong> Node.js, PHP, Python</li>
-    <li>🗄️ <strong>Banco de Dados:</strong> MySQL, PostgreSQL</li>
-    <li>🧰 <strong>Outros:</strong> Git, Linux, Redes de Computadores</li>
-  </ul>
-</section>
-
-  <!-- Seção de projetos exibidos em grid -->
-
-  <section id="portfolio" class="projetos">
-    <h4>PORTFÓLIO</h4>
-    <div class="projetos-grid">
-      <div class="projeto">
-        <a href="https://github.com/filipbraga/Calculadora" target="_blank">
-        <img src="calc.png" alt="Projeto Calculadora" /></a>
-        <h3>CALCULADORA</h3>
-        <p>Calculadora em Python com Tkinter.</p>
-      </div>
-      <div class="projeto">
-        <a href="https://github.com/filipbraga/Gameflix" target="_blank">
-        <img src="gameflix.png" alt="Projeto Gameflix" /></a>
-        <h3>GAMEFLIX</h3>
-        <p>Plataforma de games inspirada na Netflix.</p>
-      </div>
-      <div class="projeto">
-        <a href="https://github.com/filipbraga/Snakegame" target="_blank">
-        <img src="cobra.png" alt="Projeto Snake Game" /></a>
-        <h3>SNAKE GAME</h3>
-        <p>Jogo Da Cobrinha em javascript.</p>
-      </div>
-      <div class="projeto">
-        <a href="https://github.com/filipbraga/loginstagram" target="_blank">
-        <img src="insta.png" alt="Projeto Login Instagram" /></a>
-        <h3>INSTAGRAM</h3>
-        <p>Clone da Página de Login do Instagram.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção de contato -->
-
-  <section id="contato" >
-  <h2>CONTATO</h2>
-  
-
-  <!-- Links de contato -->
-  <div class="contato">
-    <a href="mailto:felipe-teti@hotmail.com" style="margin: 0 10px; color: #ff0077; text-decoration: none;">✉️ Email</a>
-    <a href="https://github.com/filipbraga" target="_blank" style="margin: 0 10px; color: #ff0077; text-decoration: none;">🐙 GitHub</a>
-    <a href="https://www.linkedin.com/in/filipeebraga" target="_blank" style="margin: 0 10px; color: #ff0077; text-decoration: none;">💼 LinkedIn</a>
-  </div>
-
-<h3>📬 Envie uma mensagem</h3>
-
-<form id="form-contato" class="form-contato">
-  <label for="nome">Nome</label>
-  <input type="text" id="nome" name="nome" required>
-
-  <label for="email">Email</label>
-  <input type="email" id="email" name="email" required>
-
-  <label for="mensagem">Mensagem</label>
-  <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-
-  <button type="submit">Enviar</button>
-</form>
-
-<p id="mensagem-sucesso" style="display: none; text-align: center; color: #00fff7; margin-top: 15px;">
-  ✅ Sua mensagem foi enviada com sucesso!
-</p>
-
-<!-- Roda Pé -->
-
-  <footer id="footer">  
-    <p>&copy; 2025 Filipe Braga</p>
-  </footer>
-
-
-<script>
-   // Manipulação do formulário de contato
-  const form = document.getElementById("form-contato");
-  const mensagem = document.getElementById("mensagem-sucesso");
-  // Impede o recarregamento
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); 
-    
-  // Exibe mensagem de sucesso
-  mensagem.style.display = "block";
-
-  // Limpa os campos
-  form.reset();
-  });
-
-</script>
-</body>
-</html>
-
-
-
-
-
+    <a class="text-slate-400 hover:text-primary transition-colors flex items-center gap-2 group" href="mailto:felipe-teti@hotmail.com">
+        <span class="text-[10px] font-mono tracking-widest uppercase">Email</span>
+        <span class="material-symbols-outlined text-sm group-hover:scale-110 transition-transform">alternate_email</span>
+    </a>
+</div>
+<div class="flex flex-col items-end">
+  <span class="text-[10px] text-emerald-400 font-mono tracking-widest">SYSTEM_STATUS: NOMINAL</span>
+  <span class="text-[10px] text-slate-500 font-mono tracking-widest" data-location="Ouro Preto, MG">LOCATION: OURO PRETO, MG</span>
+</div>
+</div>
+</footer>
+</main>
+</div>
+<!-- Background Elements Overlay -->
+<div class="fixed top-0 left-0 w-full h-screen pointer-events-none opacity-20">S
+<div class="absolute top-[10%] left-[5%] text-[8px] font-mono text-primary vertical-rl uppercase tracking-widest">Data_Stream_00101010</div>
+<div class="absolute bottom-[10%] right-[5%] text-[8px] font-mono text-primary vertical-rl uppercase tracking-widest">Sequence_Alpha_99</div>
+</div>
+</body></html>
